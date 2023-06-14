@@ -11,3 +11,6 @@
 
 ## [Projeto final:](./Projeto/README.md)
 
+Sistema de controle de avaliações academicas para professores e alunos.
+O sistema deve possibilitar a criação de diciplinas pelos professores, que também poderão adcionar atividades avaliativas, contendo a data, o horario, a pontuação e o que será necessario fazer nessa atividade.
+Os alunos poderão se inscrever nas diciplinas para acompanhar as atividades, além de criar suas proprias atividades para ajudar no controle pessoal. Esse projeto não terá nenhum tipo de ligação com o moodle, minha ufop ou diario de classe do professor. 

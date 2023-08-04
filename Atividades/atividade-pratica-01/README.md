@@ -1,4 +1,4 @@
-# **CSI606-2023-01 - Atividade pratica 01  **
+# CSI606-2023-01 - Atividade pratica 01  
 
 # **Tecnologias utilizadas:**
 

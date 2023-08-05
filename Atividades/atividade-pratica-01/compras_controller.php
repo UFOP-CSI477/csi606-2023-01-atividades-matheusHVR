@@ -54,4 +54,38 @@ function cadastra_compra(){
     
 } 
 
+function deleta_compra(){
+    $data = file_get_contents("php://input");
+    $decodedData = json_decode($data, true);
+    $id = $decodedData[¨id¨];
+    header("Content-Type: application/json");
+   
+    $con = mysqli_connect('localhost','admin','');
+    mysqli_select_db('e_comerce', $con);
+
+    $query = "DELETE FROM compras WHERE id = $id;";
+    $result = mysqli_query($query);
+
+    echo $result;
+    mysqli_close($con);
+}
+
+function altera_compra(){
+    $data = file_get_contents("php://input");
+    $decodedData = json_decode($data, true);
+    $id = $decodedData[¨id¨];
+    $data = $decodedData['data'];
+
+    header("Content-Type: application/json");
+
+    $con = mysqli_connect('localhost','admin','');
+    mysqli_select_db('e_comerce', $con);
+
+    $query = "UPDATE compras SET data = $data WHERE id = $id;";
+    $result = mysqli_query($query);
+
+    echo $result;
+    mysqli_close($con);
+}
+
 ?>

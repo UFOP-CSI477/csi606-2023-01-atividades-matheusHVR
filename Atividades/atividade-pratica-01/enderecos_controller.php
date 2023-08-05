@@ -90,4 +90,42 @@ function cadastra_endereco(){
 
 } 
 
+function deleta_endereco(){
+    $data = file_get_contents("php://input");
+    $decodedData = json_decode($data, true);
+    $id = $decodedData[¨id¨];
+    header("Content-Type: application/json");
+   
+    $con = mysqli_connect('localhost','admin','');
+    mysqli_select_db('e_comerce', $con);
+
+    $query = "DELETE FROM enderecos WHERE id = $id;";
+    $result = mysqli_query($query);
+
+    echo $result;
+    mysqli_close($con);
+}
+
+function altera_endereco(){
+
+    $data = file_get_contents("php://input");
+    $decodedData = json_decode($data, true);
+    $id = $decodedData[¨id¨];
+    $rua = $decodedData['rua'];
+    $numero = $decodedData['numero'];
+    $bairro = $decodedData['bairro'];
+    $telefone = $decodedData['telefone'];
+    header("Content-Type: application/json");
+
+    $con = mysqli_connect('localhost','admin','');
+    mysqli_select_db('e_comerce', $con);
+
+    $query = "UPDATE produtos SET rua = $rua , numero = $numero , bairro = $bairro , telefone = $telefone WHERE id = $id;";
+    $result = mysqli_query($query);
+
+    echo $result;
+    mysqli_close($con);
+
+}
+
 ?>
